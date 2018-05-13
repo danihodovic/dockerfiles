@@ -23,5 +23,5 @@ docker run \
     -e AWS_PROFILE \
     -e AWS_ACCESS_KEY_ID \
     -e AWS_SECRET_ACCESS_KEY \
-    danihodovic/certbot-route53 -d 'mydomain.com' -d '*.mydomain.com' -m webmaster@domain.com
+    danihodovic/certbot-route53 -d 'mydomain.com' -d '*.mydomain.com' -m webmaster@mydomain.com
 ```
