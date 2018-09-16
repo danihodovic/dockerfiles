@@ -19,6 +19,7 @@ RUN curl -o /get-pip.py https://bootstrap.pypa.io/get-pip.py && \
 	rm /get-pip.py
 
 RUN pip install jmespath==0.9.3
+RUN pip install docker==3.5.0
 
 # Samson hangs when cloning new repositories during the first container boot.
 # Scan github keys during the build to prevent this
