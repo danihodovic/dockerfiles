@@ -1,7 +1,7 @@
 FROM zendesk/samson:v2371
 
 # Install docker cli to build images from Samson on the host
-ENV DOCKERVERSION=18.03.1-ce
+ENV DOCKERVERSION=18.06.1-ce
 RUN curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKERVERSION}.tgz \
   && mv docker-${DOCKERVERSION}.tgz docker.tgz \
   && tar xzvf docker.tgz \
@@ -24,4 +24,4 @@ RUN pip install jmespath==0.9.3 docker==3.5.0
 # Scan github keys during the build to prevent this
 RUN mkdir ~/.ssh/ && ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 
-RUN pip install ansible==2.6.1
+RUN pip install ansible==2.7.0
