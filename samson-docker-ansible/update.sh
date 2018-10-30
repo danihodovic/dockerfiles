@@ -11,5 +11,5 @@ fi
 samson_version=$1
 image=danihodovic/samson-ansible
 docker pull "zendesk/samson:$samson_version"
-docker build -t "$image:$samson_version" .
+docker build -t "$image:$samson_version" --build-arg SAMSON_VERSION="$samson_version" .
 docker push "$image:$samson_version"

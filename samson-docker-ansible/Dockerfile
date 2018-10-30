@@ -1,4 +1,5 @@
-FROM zendesk/samson:v2371
+ARG SAMSON_VERSION
+FROM zendesk/samson:$SAMSON_VERSION
 
 # Install docker cli to build images from Samson on the host
 ENV DOCKERVERSION=18.06.1-ce
@@ -18,7 +19,7 @@ RUN curl -o /get-pip.py https://bootstrap.pypa.io/get-pip.py && \
 	python /get-pip.py && \
 	rm /get-pip.py
 
-RUN pip install jmespath==0.9.3 docker==3.5.0
+RUN pip install jmespath==0.9.3 docker==3.5.0 boto
 
 # Samson hangs when cloning new repositories during the first container boot.
 # Scan github keys during the build to prevent this
