@@ -25,4 +25,4 @@ RUN pip install jmespath==0.9.3 docker==3.5.0 boto
 # Scan github keys during the build to prevent this
 RUN mkdir ~/.ssh/ && ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 
-RUN pip install ansible==2.7.0
+RUN pip install ansible==2.7.1
